@@ -27,8 +27,11 @@ jobs:
         pip install flake8 pytest-playwright
         python -m pip install playwright
     - name: Ensure Playwright browsers are installed
-      run: python -m playwright install
-        if [ -f requirements.txt ]; pip install -r requirements.txt;
+      run: |
+        python -m playwright install
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        fi
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
