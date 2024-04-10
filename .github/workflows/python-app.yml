@@ -27,7 +27,9 @@ jobs:
       run: playwright install
 
     - name: Check Playwright browsers installation
-      run: ls -la ~/.cache/ms-playwright/
+      run: |
+        python -m playwright install chromium
+        ls -la ~/.cache/ms-playwright/
 
     - name: Install Python dependencies
       run: |
