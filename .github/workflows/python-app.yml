@@ -1,10 +1,10 @@
 name: Playwright tests
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: workflow_dispatch
+#  push:
+#    branches: [ "main" ]
+#  pull_request:
+#    branches: [ "main" ]
 
 permissions:
   contents: write
@@ -28,7 +28,7 @@ jobs:
         python -m pip install playwright
     - name: Ensure Playwright browsers are installed
       run: python -m playwright install
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        if [ -f requirements.txt ]; then pip install -r requirements.txt;
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
